@@ -1,0 +1,6 @@
+"use client";
+import { useState } from "react";
+export default function PasswordField({id,name,placeholder,autoComplete,onChange}:{id:string;name:string;placeholder:string;autoComplete:string;onChange?:(v:string)=>void}){
+  const [show,setShow]=useState(false);
+  return <div className="inputWrap"><input className="passwordInput" id={id} name={name} type={show?"text":"password"} autoComplete={autoComplete} required minLength={8} placeholder={placeholder} onChange={e=>onChange?.(e.target.value)}/><button className={`eyeButton ${show?"showing":""}`} type="button" onClick={()=>setShow(v=>!v)} aria-label={show?"Wachtwoord verbergen":"Wachtwoord tonen"}><span className="eye" aria-hidden="true"><svg className="open" viewBox="0 0 24 24" fill="none"><path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z" stroke="currentColor" strokeWidth="1.6"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" strokeWidth="1.6"/></svg><svg className="closed" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M10.6 7.1c.46-.07.93-.1 1.4-.1 6 0 9.5 5 9.5 5a16 16 0 0 1-2.6 2.8M6.3 8.2A15.1 15.1 0 0 0 2.5 12s3.5 5 9.5 5c1.2 0 2.3-.2 3.3-.5M9.7 9.7a3.2 3.2 0 0 0 4.6 4.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg></span></button></div>
+}

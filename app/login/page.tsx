@@ -1,0 +1,3 @@
+import AuthPanel from "@/components/AuthPanel";
+export const metadata={title:"Login",description:"Inloggen of een Voidworks klantaccount maken."};
+export default function Page(){return <main><section className="authWrap"><div className="container authGrid"><aside className="authAside reveal"><span className="kicker"><span className="kickerDot"/>Klantaccount</span><h2>Je websitezaken op één plek.</h2><p>Als Supabase is gekoppeld kun je hier veilig inloggen. Daarna kunnen projecten, hosting, wijzigingsverzoeken en support aan je account worden gekoppeld.</p><div className="miniScene"><div className="miniCube"><i/><i/><i/></div></div></aside><AuthPanel/></div></section></main>}
